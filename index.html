@@ -2,39 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TubeFlow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>YouTube AdFree</title>
     
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="TubeFlow">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="YouTube">
     <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg">
 
     <style>
-        body, html {
+        body {
+            background-color: #0f0f0f;
+            color: white;
+            font-family: -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            background-color: #000;
+            text-align: center;
         }
-        iframe {
-            border: none;
-            width: 100%;
-            height: 100%;
+        .instruction {
+            padding: 20px;
+            border: 1px solid #333;
+            border-radius: 15px;
+            background: #1a1a1a;
         }
-        /* Fix for iOS status bar overlap */
-        .container {
-            padding-top: env(safe-area-inset-top);
-            height: calc(100% - env(safe-area-inset-top));
-        }
+        .icon { width: 80px; height: 80px; margin-bottom: 20px; }
     </style>
+
+    <script>
+        // Detection: If running as a Home Screen App, jump to the ad-free player
+        if (window.navigator.standalone === true) {
+            window.location.replace("https://piped.video");
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <iframe src="https://yewtu.be" allowfullscreen></iframe>
+
+    <div class="instruction">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" class="icon" alt="YouTube">
+        <h2>Install Ad-Free App</h2>
+        <p>1. Tap the <strong>Share</strong> icon (square with arrow).</p>
+        <p>2. Scroll down and tap <strong>'Add to Home Screen'</strong>.</p>
+        <p>3. Open the new icon from your home screen.</p>
     </div>
+
 </body>
 </html>
-
