@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TubeFlow</title>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="TubeFlow">
+    <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        /* Fix for iOS status bar overlap */
+        .container {
+            padding-top: env(safe-area-inset-top);
+            height: calc(100% - env(safe-area-inset-top));
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <iframe src="https://yewtu.be" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
+
